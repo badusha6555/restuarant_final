@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Outlets - Madras Darbar Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts - Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  
+rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
+
+  <style>
+     body {
+      font-family: 'Raleway', sans-serif; /* Updated to Raleway */
+      font-weight: 400;
+    }
+
+    .location-card {
+      transition: all 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-container {
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+    h1,h2, h3 {
+      font-family: 'Cinzel', serif; /* Updated to Cinzel */
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    p{
+      font-family: "Playwrite RO", cursive;
+      font-style: normal;
+}
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-red-600 sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="logo">
+            <img src="images\15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo"
+class="h-14 md:h-16">
+        </div>
+        <nav class="flex items-center">
+            <ul class="hidden md:flex mr-6">
+                <li><a href="index.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300
+transition-colors">HOME</a></li>
+                <li><a href="about.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+ABOUT</a></li>
+                <li><a href="menu.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+MENU</a></li>
+                <li><a href="contact.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300
+transition-colors">CONTACT US</a></li>
+            </ul>
+            <button class="md:hidden ml-4 flex flex-col
+cursor-pointer" id="mobile-menu-btn">
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+            </button>
+        </nav>
+    </div>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="md:hidden hidden bg-red-600 w-full absolute top-full
+left-0 p-4 shadow-lg" id="mobile-menu">
+      <ul class="flex flex-col space-y-3">
+        <li><a href="index.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">HOME</a></li>
+        <li><a href="about.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">ABOUT</a></li>
+        <li><a href="menu.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">MENU</a></li>
+        <li><a href="contact.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT
+US</a></li>
+    </ul>
+    </div>
+</header>
+
+  <!-- Hero Banner -->
+
+
+  <!-- Outlets Section -->
+  <section class="py-16 container mx-auto px-4 relative"
+style="background-image: url('food.jpg'); background-size: cover;
+background-position: center;">
+    <div class="relative py-16 bg-cover bg-center">
+        <div class="absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-4 text-center
+text-white">
+          <h1 class="text-5xl font-bold mb-4">Visit Our Locations</h1>
+          <p class="text-xl max-w-3xl mx-auto">Authentic Indian
+flavors available at four convenient locations across Thailand</p>
+        </div>
+      </div>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white">Our Outlets</h2>
+      <p class="text-white mt-2 max-w-2xl mx-auto">Experience
+authentic North & South Indian cuisine crafted with passion and tradition.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Pattaya Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="map-container">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Pattaya</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Located in the heart of
+Pattaya's beach strip, our vibrant restaurant offers an unforgettable
+dining experience with ocean views.</p>
+          <div class="mb-4">
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+            </a>
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bangkok Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="map-container">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Bangkok</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Our Bangkok location offers an authentic Indian dining experience in the bustling heart of Thailand's capital city.</p>
+          <div class="mb-4">
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+            </a>
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Phuket Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="map-container">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Phuket</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Our Phuket branch brings the rich flavors of Indian cuisine to Thailand's largest island paradise.</p>
+          <div class="mb-4">
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+            </a>
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NEW: Sri Lanka Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+        <div class="relative">
+          <div class="map-container">
+            <img src="food.jpg" alt="Sri Lanka Location" class="w-full h-auto object-cover">
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
+              <a href="https://goo.gl/maps/YourChiangMaiLink" target="_blank">
+                <i class="fas fa-map-marker-alt text-white"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Sri Lanka</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Our newest location in Sri Lanka's Old City brings authentic Indian flavors to northern Thailand's cultural center.</p>
+          <div class="mb-4">
+            <p class="font-medium text-gray-700 mb-1">
+              <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
+            </p>
+            <p class="text-gray-600">8:00 AM to 11:00 PM (Daily)</p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <a href="https://wa.me/66912345678" target="_blank" 
+              class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+              <i class="fab fa-whatsapp mr-2"></i> +66 912 345 678
+            </a>
+            <a href="https://goo.gl/maps/YourChiangMaiLink" target="_blank" 
+              class="block w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Contact Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Contact Us</h2>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Have questions or feedback? We'd love to hear from you!</p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="p-8">
+        <form id="contactForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200">
+            </div>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200"></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" 
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center">
+              <i class="far fa-paper-plane mr-2"></i> Send Message
+            </button>
+          </div>
+        </form>
+        
+        <div id="response" class="mt-6 text-center font-medium hidden"></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="py-12 text-white" style="background-color: #e20000;"
+data-aos="fade-up" data-aos-duration="1000">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between mb-10
+space-y-8 md:space-y-0">
+            <div class="md:w-1/3 text-center md:text-left">
+                <img src="15.jpg" alt="" class="h-32 mx-auto
+md:ml-auto md:mr-0 mb-4">
+            </div>
+            <div class="md:w-1/4 text-center md:text-left">
+              <h3 class="text-white text-lg font-semibold mb-4">Our Locations</h3>
+              <ul class="space-y-2">
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Pattaya</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Bangkok</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Phuket</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Sri Lanka</a></li>
+              </ul>
+          </div>
+          
+            <div class="md:w-1/3 text-center md:text-left">
+              <h3 class="text-white text-base font-semibold
+mb-4">CONTACT US</h3>
+
+              <p class="text-gray-100 mb-2">
+                <a href="mailto:info@madrasdarbar.org" class="hover:underline">
+                  info@madrasdarbar.org
+                </a>
+              </p>
+
+              <p class="text-gray-100 mb-4">
+                <a href="mailto:madrasdarbar@gmail.com" class="hover:underline">
+                  madrasdarbar@gmail.com
+                </a>
+              </p>
+
+              <div class="flex justify-center md:justify-start space-x-4">
+                <a href="https://facebook.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+  <!-- Simple JS for mobile menu toggle -->
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click',
+function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyb_q6Hf4fpfQctzFXmo8YcbFogZFOOjIcuA-7I7U-Z5MwaLdfmsqYF6hRX82Kp7C6LRA/exec'; // Replace with your actual Web App URL
+  
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+      
+      const responseEl = document.getElementById('response');
+      responseEl.classList.remove('hidden', 'text-green-500', 'text-red-500');
+      
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(text => {
+          responseEl.classList.add('text-green-500');
+          responseEl.classList.remove('hidden');
+          responseEl.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully!';
+          form.reset();
+        })
+        .catch(error => {
+          responseEl.classList.add('text-red-500');
+          responseEl.classList.remove('hidden');
+          responseEl.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> There was an error sending your message. Please try again.';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            if (!responseEl.classList.contains('hidden')) {
+              responseEl.classList.add('hidden');
+            }
+          }, 5000);
+        });
+    });
+  </script>
+</body>
+</html>

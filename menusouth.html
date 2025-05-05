@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice & Savor Menu - South Indian Specialties</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation - Just include the CSS here -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome for icons in footer -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Add custom color for Lucha theme */
+    .text-lucha-pink {
+      color: #e20000;
+    }
+    .bg-lucha-pink {
+      background-color: #e20000;
+    }
+    .hover\:bg-lucha-pink-dark:hover {
+      background-color: #c00000;
+    }
+    
+    /* Add custom animation for menu items */
+    @keyframes menuItemAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .menu-item {
+      animation: menuItemAppear 0.5s ease forwards;
+      opacity: 0;
+    }
+    
+    /* Add a hover effect for menu items */
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    } 
+    h1,h2{
+      font-family: 'Cinzel', serif; /* Updated to Cinzel */
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    p{
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+    
+   
+  </style>
+</head>
+<body class="bg-gray-800 bg-no-repeat min-h-screen" style="background-image: url('images/rice.jpg'); background-size: cover; background-position: center;">
+  <header class="bg-red-600 sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="logo">
+            <img src="images\15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo"
+class="h-14 md:h-16">
+        </div>
+        <nav class="flex items-center">
+            <ul class="hidden md:flex mr-6">
+                <li><a href="index.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300
+transition-colors">HOME</a></li>
+                <li><a href="about.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+ABOUT</a></li>
+                <li><a href="menu.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+MENU</a></li>
+                <li><a href="contact.html" class="text-white
+font-semibold text-sm mx-4 hover:text-yellow-300
+transition-colors">CONTACT US</a></li>
+            </ul>
+            <button class="md:hidden ml-4 flex flex-col
+cursor-pointer" id="mobile-menu-btn">
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+            </button>
+        </nav>
+    </div>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="md:hidden hidden bg-red-600 w-full absolute top-full
+left-0 p-4 shadow-lg" id="mobile-menu">
+      <ul class="flex flex-col space-y-3">
+        <li><a href="index.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">HOME</a></li>
+        <li><a href="about.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">ABOUT</a></li>
+        <li><a href="menu.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink
+transition-colors">MENU</a></li>
+        <li><a href="contact.html" class="text-white font-semibold
+text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT
+US</a></li>
+    </ul>
+    </div>
+</header>
+  
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-6xl font-bold text-red-500 text-center mb-2" data-aos="fade-down">South Indian Specialties</h1>
+    <h2 class="text-2xl text-gray-300 text-center mb-10" data-aos="fade-up">
+      Authentic South Indian delicacies prepared with traditional recipes and fresh ingredients
+    </h2>
+
+    <!-- Grid Container for South Indian Menu -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left Column -->
+      <div class="bg-red-800 rounded-xl shadow-lg p-6" data-aos="fade-right">
+        <h2 class="text-2xl font-semibold text-red-500 mb-4 flex items-center">
+          <span class="mr-2">🥣</span>Idly & Breakfast Specialties
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="100">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>IDLY (3 PCS)</h3>
+              <p class="text-gray-400 text-sm">Steamed rice cakes served with sambar and chutney</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="150">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>SAMBAR IDLY (2 PCS)</h3>
+              <p class="text-gray-400 text-sm">Idly immersed in flavorful sambar</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="200">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>IDLY (2 PCS), VADA (1 PC)</h3>
+              <p class="text-gray-400 text-sm">Classic South Indian breakfast combo</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="250">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>SAMBAR IDLY (1 PC), VADA (1 PC)</h3>
+              <p class="text-gray-400 text-sm">Sambar idly with crispy vada</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="300">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>PONGAL</h3>
+              <p class="text-gray-400 text-sm">Traditional rice and lentil porridge with ghee</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="350">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>POORI MASALA</h3>
+              <p class="text-gray-400 text-sm">Fluffy deep-fried bread served with potato masala</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="400">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>CHOLE BHATURE</h3>
+              <p class="text-gray-400 text-sm">Spicy chickpea curry with fluffy fried bread</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Column -->
+      <div class="bg-red-800 rounded-xl shadow-lg p-6" data-aos="fade-left">
+        <h2 class="text-2xl font-semibold text-red-500 mb-4 flex items-center">
+          <span class="mr-2">🥞</span>Classic Dosa Varieties
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="100">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>PLAIN DOSA</h3>
+              <p class="text-gray-400 text-sm">Thin crispy crepe made from fermented rice batter</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="150">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Crispy dosa filled with spiced potato mixture</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="200">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>ONION DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa topped with sautéed onions</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="250">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>ONION MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Masala dosa with crispy onion topping</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="300">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>BUTTER DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa with a generous spread of butter</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="350">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>MYSORE MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa with spicy red chutney and potato filling</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="400">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>KALDOSA</h3>
+              <p class="text-gray-400 text-sm">Thick soft dosa variant with unique taste</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Additional Menu Items -->
+    <div class="bg-red-800 rounded-xl shadow-lg p-6 mt-8" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-red-500 mb-4 flex items-center">
+        <span class="mr-2">✨</span>Premium Dosa Varieties & Uthappam
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="space-y-4">
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="100">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>CHEESE DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa filled with melted cheese</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="150">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>CHEESE MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Masala dosa with cheese topping</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="200">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>BUTTER CHEESE DOSA</h3>
+              <p class="text-gray-400 text-sm">Buttery dosa topped with cheese</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="250">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>BUTTER CHEESE MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">The ultimate combination with butter, cheese and potato masala</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="300">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>PANEER DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa with cottage cheese filling</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="350">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>PANEER MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Dosa with spiced paneer filling</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="100">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>RAVA DOSA</h3>
+              <p class="text-gray-400 text-sm">Crispy semolina dosa with a unique texture</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="150">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>RAVA MASALA DOSA</h3>
+              <p class="text-gray-400 text-sm">Semolina dosa with potato masala filling</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="200">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>GHEE ROAST</h3>
+              <p class="text-gray-400 text-sm">Dosa roasted in pure ghee for rich flavor</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="250">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>MIX VEG UTHAPPAM</h3>
+              <p class="text-gray-400 text-sm">Thick pancake topped with mixed vegetables</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="300">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>ONION UTHAPPAM</h3>
+              <p class="text-gray-400 text-sm">Thick pancake topped with onions</p>
+            </div>
+          </li>
+          <li class="flex justify-between items-start hover:bg-gray-800 transition-all p-3 rounded-lg menu-item" data-aos="flip-up" data-aos-delay="350">
+            <div>
+              <h3 class="font-bold text-white flex items-center"><span class="veg-indicator"></span>ONION TOMATO UTHAPPAM</h3>
+              <p class="text-gray-400 text-sm">Thick pancake topped with onions and tomatoes</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="py-12 text-white" style="background-color: #e20000;"
+data-aos="fade-up" data-aos-duration="1000">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between mb-10
+space-y-8 md:space-y-0">
+            <div class="md:w-1/3 text-center md:text-left">
+                <img src="15.jpg" alt="" class="h-32 mx-auto
+md:ml-auto md:mr-0 mb-4">
+            </div>
+            <div class="md:w-1/4 text-center md:text-left">
+              <h3 class="text-white text-lg font-semibold mb-4">Our Locations</h3>
+              <ul class="space-y-2">
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Pattaya</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Bangkok</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Phuket</a></li>
+                  <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Sri Lanka</a></li>
+              </ul>
+          </div>
+            <div class="md:w-1/3 text-center md:text-left">
+              <h3 class="text-white text-base font-semibold
+mb-4">CONTACT US</h3>
+
+              <p class="text-gray-100 mb-2">
+                <a href="mailto:info@madrasdarbar.org" class="hover:underline">
+                  info@madrasdarbar.org
+                </a>
+              </p>
+
+              <p class="text-gray-100 mb-4">
+                <a href="mailto:madrasdarbar@gmail.com" class="hover:underline">
+                  madrasdarbar@gmail.com
+                </a>
+              </p>
+
+              <div class="flex justify-center md:justify-start space-x-4">
+                <a href="https://facebook.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/YOUR_PAGE"
+target="_blank" class="bg-white text-[#e20000] w-10 h-10 rounded-full
+flex items-center justify-center hover:bg-gray-100 transition-colors">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+  <!-- Include AOS script only once, at the end -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // Initialize AOS with proper configuration
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        offset: 100, // Start the animation when the element is 100px from the viewport
+        duration: 800, // Animation duration (in milliseconds)
+        easing: 'ease-out', // Easing function for animation
+        delay: 50, // Set a slight delay for each element
+        once: false, // Set to false so that the animation is repeated
+        mirror: true, // Allow elements to animate again when scrolling back up
+        anchorPlacement: 'top-bottom' // Defines the position of the element relative to the viewport
+      });
+
+      // Animation for menu items with staggered delay
+      const menuItems = document.querySelectorAll('.menu-item');
+      menuItems.forEach((item, index) => {
+        // Remove the default animation style to use AOS instead
+        item.style.opacity = 1;
+        item.style.animation = 'none';
+
+        // Add intersection observer for better performance
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Add a subtle animation when the item comes into view
+              setTimeout(() => {
+                item.classList.add('aos-animate');
+              }, 75 * index);  // Adjusted delay for smoother staggered effect
+              observer.unobserve(item);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(item);
+      });
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Debug image loading issues
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = () => console.error(`Failed to load image: ${img.src}`);
+      img.onload = () => console.log(`Successfully loaded image: ${img.src}`);
+    });
+  </script>
+</body>
+</html>

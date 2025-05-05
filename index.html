@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Madras Darbar</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'lucha-pink': '#ff6b81',
+                            'lucha-pink-dark': '#ff4757',
+                            'lucha-yellow': '#ffd32a',
+                            'lucha-black': '#111111',
+                        },
+                        animation: {
+                            'fade-in': 'fadeIn 1.5s ease-in-out',
+                            'slide-in': 'slideIn 1s ease-in-out',
+                            'scale-in': 'scaleIn 0.8s ease-in-out',
+                        },
+                        keyframes: {
+                            fadeIn: {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' },
+                            },
+                            slideIn: {
+                                '0%': { transform: 'translateX(-100%)' },
+                                '100%': { transform: 'translateX(0)' },
+                            },
+                            scaleIn: {
+                                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
+
+        
+        <style>
+          /* Define Newborough font */
+          @font-face {
+  font-family: 'Newborough';
+  src: url('fonts/transfonter.org-20250504-081959/Newborough.woff2') format('woff2'),
+       url('fonts/transfonter.org-20250504-081959/Newborough.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+    
+          /* Apply Newborough to brand-name class */
+          .brand-name {
+  font-family: 'Newborough', serif;
+}
+
+          /* Existing styles */
+          body {
+            font-family: "Tagesschrift", system-ui;
+            font-weight: 400;
+          }
+           h2, h3, .fancy-heading {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+          }
+          .subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-style: normal;
+            font-weight: 400;
+          }
+          .nav-links {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+          }
+          .accent-text {
+            font-family: 'Great Vibes', cursive;
+            font-style: normal;
+            font-weight: 400;
+          }
+          .image-gallery {
+            position: relative;
+            overflow: hidden;
+          }
+          .image-overlay {
+            background: rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+          }
+          .image-overlay:hover {
+            background: rgba(255, 107, 129, 0.7);
+          }
+          .carousel-container {
+            perspective: 1200px;
+            height: 500px;
+            overflow: hidden;
+          }
+          .carousel {
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+          }
+          .carousel-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transition: transform 1s ease, opacity 1s ease;
+          }
+          .glow-card {
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          .glow-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.8), 0 0 50px rgba(255, 165, 0, 0.6);
+          }
+          p{
+      font-family: "Playwrite RO", cursive;
+      font-style: normal;
+}
+        </style>
+    </head>
+<body class="text-gray-800">
+    <!-- Header -->
+    <header class="bg-red-600 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo">
+                <img src="images/15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo" class="h-14 md:h-16">
+            </div>
+            <nav class="flex items-center">
+                <ul class="hidden md:flex mr-6 nav-links">
+                    <li><a href="index.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">HOME</a></li>
+                    <li><a href="about.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">ABOUT</a></li>
+                    <li><a href="menu.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">MENU</a></li>
+                    <li><a href="contact.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">CONTACT US</a></li>
+                </ul>
+                <button class="md:hidden ml-4 flex flex-col cursor-pointer" id="mobile-menu-btn">
+                    <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                    <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                    <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-red-600 w-full absolute top-full left-0 p-4 shadow-lg nav-links" id="mobile-menu">
+            <ul class="flex flex-col space-y-3">
+                <li><a href="index.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">HOME</a></li>
+                <li><a href="about.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">ABOUT</a></li>
+                <li><a href="menu.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">MENU</a></li>
+                <li><a href="contact.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT US</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="w-full h-[40vh] md:h-[60vh] overflow-hidden relative">
+            <img src="tacos-hero.jpg" alt="Delicious food on a golden background" class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105" id="hero-img">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <div class="bg-black bg-opacity-60 px-6 py-8 md:px-16 md:py-12 rounded-lg border-2 border-white transform transition-all duration-700 hover:scale-105">
+                    <div class="w-full flex justify-center mb-4">
+                        <div class="w-32 md:w-48 h-3 bg-white rounded-full"></div>
+                    </div>
+                    <h1 class="brand-name text-3xl md:text-5xl text-white mb-2 tracking-wider">Welcome to Madras Darbar</h1>
+                    
+                    <div class="w-full flex justify-center mt-4">
+                        <div class="w-32 md:w-48 h-3 bg-white rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section
+        class="relative"
+        style="background-image: url('15.png'), linear-gradient(#8d0c0c, #8d0c0c); background-blend-mode: multiply;"
+        data-aos="fade-in"
+        data-aos-duration="800"
+    >
+        <div class="w-full h-[100vh] md:h-[100vh] overflow-hidden relative">
+            <img
+                src="restaurant-hall-with-leather-armchairs-french-windows.jpg"
+                alt="Delicious food on a golden background"
+                class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+                id="hero-img"
+            >
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="bg-black bg-opacity-60 text-white p-8 rounded-lg border-2 w-full max-w-xl md:max-w-2xl lg:max-w-3xl transition-all duration-700 hover:scale-105">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 brand-name">About Madras Darbar Restaurant</h2>
+                    <p class="text-base md:text-lg lg:text-xl leading-relaxed overflow-auto max-h-[85vh]">
+                        Experience the authentic flavors of India at <span class="brand-name">Madras Darbar</span> Restaurant, a renowned culinary destination in Thailand. <span class="accent-text">With a rich 18-year legacy</span>, we've grown from a humble beginning to three thriving locations, serving the finest non-vegetarian South and North Indian cuisine. 
+                    </p>
+                    <div class="text-center mt-10">
+                        <a href="about.html" class="bg-yellow-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition-colors">Know more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="text-center pt-10 pb-20 max-w-[100vw] overflow-x-hidden relative" style="background-image: url('images/top-half-view-vinaigrette-salad-plate.jpg'); background-size: cover; background-position: center;">
+        <h1 class="text-black font-extrabold text-5xl leading-tight fancy-heading">
+            Our Favorite Dishes
+        </h1>
+        <p class="text-black font-semibold text-xl mt-3 max-w-xl mx-auto subtitle">
+            We try not to have favorites but we just can't help it!
+        </p>
+    
+        <!-- Wrapper to center carousel -->
+        <div class="flex justify-center mt-12">
+            <div class="relative carousel-container w-full max-w-7xl">
+                <div id="carousel" class="carousel w-full h-full relative">
+                    <!-- Cards with anchor tags -->
+                    <a href="menusouth.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0114.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">South Indian</h2>
+                            <p class="text-sm text-white accent-text">
+                                A Taste of Tradition
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="menu_soups.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0117.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Soups and Snacks</h2>
+                            <p class="text-sm text-white accent-text">
+                                Warm, comforting, and perfect for any time of the day.
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="veg.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/correen-BVYHxixlw_c-unsplash.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Vegetable Curries</h2>
+                            <p class="text-sm text-white accent-text">
+                                A Symphony of Flavors
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="sea_food.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="./images/pexels-valeriya-28701091.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Sea Food</h2>
+                            <p class="text-sm text-white accent-text">
+                                Fresh and Flavorful Sea Food Delight.
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="egg_dishes.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="./images/roman-shalkevic-UDRZtw_F_Nc-unsplash.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Egg Curries</h2>
+                            <p class="text-sm text-white accent-text">
+                                Rich, flavorful, and packed with protein, our egg curries are a must-try!
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="chicken_menu.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0119.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Chicken Delights</h2>
+                            <p class="text-sm text-white accent-text">
+                                Tender, juicy, and bursting with flavor, our chicken dishes are a must-try.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Arrow Buttons -->
+                <button onclick="rotateCarousel(-1)" 
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white text-2xl rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800">
+                    ←
+                </button>
+                
+                <button onclick="rotateCarousel(1)" 
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white text-2xl rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800">
+                    →
+                </button>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="menu.html" class="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors nav-links">View Full Menu</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-white bg-[#e20000]" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-10 space-y-8 md:space-y-0">
+            
+                <!-- Logo Section -->
+                <div class="md:w-1/3 text-center md:text-left">
+                    <img src="15.jpg" alt="Madras Darbar Logo" class="h-32 mx-auto md:mx-0 mb-4">
+                    <!-- <h3 class="brand-name text-xl font-bold">Madras Darbar</h3> -->
+                </div>
+            
+                <!-- Our Locations -->
+                <div class="md:w-1/4 text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-4 fancy-heading">Our Locations</h3>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Pattaya</a></li>
+                        <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Bangkok</a></li>
+                        <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Phuket</a></li>
+                        <li><a href="contact.html" class="text-gray-100 hover:text-white transition-colors">Sri Lanka</a></li>
+
+                    </ul>
+                </div>
+            
+                <!-- Contact & Social -->
+                <div class="md:w-1/3 text-center md:text-left">
+                    <h3 class="text-base font-semibold mb-4 fancy-heading">Contact Us</h3>
+                    <p class="text-gray-100 mb-2">
+                        <a href="mailto:info@madrasdarbar.org" class="hover:underline">info@madrasdarbar.org</a>
+                    </p>
+                    <p class="text-gray-100 mb-4">
+                        <a href="mailto:madrasdarbar@gmail.com" class="hover:underline">madrasdarbar@gmail.com</a>
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://facebook.com/YOUR_PAGE" target="_blank" aria-label="Facebook"
+                            class="bg-white text-[#e20000] w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram"
+                            class="bg-white text-[#e20000] w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/YOUR_PAGE" target="_blank" aria-label="Twitter"
+                            class="bg-white text-[#e20000] w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include FontAwesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+    
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+    
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) {
+                window.addEventListener('scroll', function() {
+                    const scrollPosition = window.scrollY;
+                    if (scrollPosition < 500) {
+                        heroImg.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        const cards = document.querySelectorAll('.carousel-card');
+        let angle = 0;
+        const totalCards = cards.length;
+        const step = 360 / totalCards;
+        const radius = 400;
+    
+        function updateCarousel() {
+            cards.forEach((card, index) => {
+                const rotation = (index * step + angle) % 360;
+                const rad = rotation * (Math.PI / 180);
+                const x = Math.sin(rad) * radius;
+                const z = Math.cos(rad) * radius;
+        
+                card.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rotation}deg)`;
+                card.style.opacity = z > 0 ? 1 : 0.4;
+                card.style.zIndex = Math.floor(z);
+            });
+        }
+    
+        function rotateCarousel(direction) {
+            angle += step * direction * -1;
+            updateCarousel();
+        }
+    
+        // Initial
+        updateCarousel();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const cardWidth = 280; // width + gap (256px card + 24px gap)
+            carousel.scrollBy({
+                left: direction * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
