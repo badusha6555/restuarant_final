@@ -126,6 +126,14 @@
       font-family: "Playwrite RO", cursive;
       font-style: normal;
 }
+     /* Hide scrollbar for all browsers */
+     .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
         </style>
     </head>
 <body class="text-gray-800">
@@ -196,15 +204,15 @@
             <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                 <div class="bg-black bg-opacity-60 text-white p-8 rounded-lg border-2 w-full max-w-xl md:max-w-2xl lg:max-w-3xl transition-all duration-700 hover:scale-105">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 brand-name">About Madras Darbar Restaurant</h2>
-                    <p class="text-base md:text-lg lg:text-xl leading-relaxed overflow-auto max-h-[85vh]">
-                        Experience the authentic flavors of India at <span class="brand-name">Madras Darbar</span> Restaurant, a renowned culinary destination in Thailand. <span class="accent-text">With a rich 18-year legacy</span>, we've grown from a humble beginning to three thriving locations, serving the finest non-vegetarian South and North Indian cuisine. 
-                    </p>
+                    <p class="text-base md:text-lg lg:text-xl leading-relaxed overflow-auto max-h-[85vh] no-scrollbar">
+                        Experience the authentic flavors of India at Madras Darbar Restaurant, a renowned culinary destination in Thailand. With a rich 18-year legacy, we've grown from a humble beginning to three thriving locations, serving the finest non-vegetarian South and North Indian cuisine.
+</p>    
                     <div class="text-center mt-10">
                         <a href="about.html" class="bg-yellow-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition-colors">Know more</a>
                     </div>
                 </div>
             </div>
-        </div>
+      
     </section>
 
     <!-- Menu Section -->
