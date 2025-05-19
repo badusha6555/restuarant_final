@@ -45,7 +45,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
         
         <style>
           /* Define Newborough font */
@@ -123,119 +125,22 @@
             box-shadow: 0 0 25px rgba(255, 140, 0, 0.8), 0 0 50px rgba(255, 165, 0, 0.6);
           }
           p{
-            font-family: "Playwrite RO", cursive;
-            font-style: normal;
-          }
-          /* Hide scrollbar for all browsers */
-          .no-scrollbar::-webkit-scrollbar {
+      font-family: "Playwrite RO", cursive;
+      font-style: normal;
+}
+     /* Hide scrollbar for all browsers */
+     .no-scrollbar::-webkit-scrollbar {
             display: none;
-          }
-          .no-scrollbar {
+        }
+        .no-scrollbar {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;     /* Firefox */
-          }
-          
-          /* Carousel Styles */
-          .card {
-            transform-style: preserve-3d;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-          }
-          
-        .carousel-container {
-    perspective: 1000px;
-    overflow: hidden;
-    height: 550px; /* Increased height for carousel container */
-}
-
-.card-container {
-    transform-style: preserve-3d;
-    position: relative;
-    height: 480px; /* Increased height for card container */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-    position: absolute;
-    width: 250px; /* Increased from 170px */
-    height: 350px; /* Increased from 230px */
-    transition: all 0.5s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    border-radius: 10px;
-    overflow: hidden;
-    background: white;
-    transform-origin: center center;
-}
-
-.card-img {
-    height: 220px; /* Increased from 160px */
-    width: 100%;
-    object-fit: cover;
-}
-
-/* Update positioning for larger cards */
-.card.position-0 { 
-    transform: translateX(-450px) translateZ(-60px) rotateY(25deg) scale(0.85); 
-    z-index: 1;
-}
-.card.position-1 { 
-    transform: translateX(-225px) translateZ(-30px) rotateY(15deg) scale(0.9); 
-    z-index: 2;
-}
-.card.position-2 { 
-    transform: translateX(0) translateZ(60px) rotateY(0) scale(1.1); 
-    z-index: 5;
-}
-.card.position-3 { 
-    transform: translateX(225px) translateZ(-30px) rotateY(-15deg) scale(0.9); 
-    z-index: 2;
-}
-.card.position-4 { 
-    transform: translateX(450px) translateZ(-60px) rotateY(-25deg) scale(0.85); 
-    z-index: 1;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-          
-          .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            backdrop-filter: blur(3px);
-            z-index: 100;
-            cursor: pointer;
-          }
-          
-          .prev-button {
-            left: 20px;
-          }
-          
-          .next-button {
-            right: 20px;
-          }
-          .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
+        }
         </style>
     </head>
 <body class="text-gray-800">
     <!-- Header -->
-    <header class="bg-red-600 sticky top-0 z-50 shadow-md">
+    <header class="spike-divider sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="logo">
                 <img src="images/15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo" class="h-14 md:h-16">
@@ -254,8 +159,9 @@
                 </button>
             </nav>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div class="md:hidden hidden bg-red-600 w-full absolute top-full left-0 p-4 shadow-lg nav-links" id="mobile-menu">
+    
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden w-full absolute top-full left-0 p-4 shadow-lg nav-links" id="mobile-menu">
             <ul class="flex flex-col space-y-3">
                 <li><a href="index.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">HOME</a></li>
                 <li><a href="about.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">ABOUT</a></li>
@@ -310,140 +216,95 @@
         </div>
     </section>
 
-
-    <!-- Our Signature Dishes Carousel Section -->
-    <section 
-        class="py-12 bg-orange-50 relative"
-        style="background-image: url('images/40944.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-    >
-        <!-- Overlay for readability -->
-        <div class="absolute inset-0 bg-orange-50 bg-opacity-80 pointer-events-none"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2 fancy-heading">Our Signature Dishes</h2>
-                <p class="text-gray-600 mb-2 accent-text">Explore our finest culinary creations</p>
-                <div class="w-16 h-1 bg-red-600 mx-auto"></div>
-            </div>
-            
-            <!-- Carousel -->
-            <div class="carousel-container w-full max-w-5xl relative mx-auto">
-                <div class="card-container mx-auto">
-                    <!-- Food cards -->
-                    <div class="card">
-                        <a href="menusouth.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\deepal-tamang-5oF7d_hPJG4-unsplash.jpg" alt="South Indian" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">South Indian</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Authentic Flavors</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="menu_soups.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\IMG-20250425-WA0126.jpg" alt="Soups" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Soups and Snacks</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Warm and Comforting</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="veg.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\IMG-20250425-WA0100.jpg" alt="Veg Curries" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Vegetable Curries</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Fresh and Flavorful Curries</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="tandoori.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\pexels-jack-baghel-2199968-20371522.jpg" alt="Tandoori Platter" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Tandoori</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Tandoori Platter</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="sea_food.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\pexels-valeriya-28701091.jpg" alt=" Sea Foods" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Sea Foods</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Fresh and Delicious Sea Foods</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="salads.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\correen-BVYHxixlw_c-unsplash.jpg" alt="Salads" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Salads</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">
-                                        Fresh and Healthy Salads
-                                    </span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="card">
-                        <a href="chicken_menu.html" class="block hover:opacity-90 transition-opacity">
-                            <img src="images\IMG-20250425-WA0106.jpg" alt="Chicken Curries" class="card-img">
-                            <div class="p-3 text-center">
-                                <h3 class="font-semibold">Chicken Curries</h3>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-xs text-gray-500">Authentic and Flavorful Chicken Curries</span>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="text-red-600 text-sm font-medium">View Details →</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+    <!-- Menu Section -->
+    <section class="text-center pt-10 pb-20 max-w-[100vw] overflow-x-hidden relative" style="background-image: url('images/top-half-view-vinaigrette-salad-plate.jpg'); background-size: cover; background-position: center;">
+        <h1 class="text-black font-extrabold text-5xl leading-tight fancy-heading">
+            Our Favorite Dishes
+        </h1>
+        <p class="text-black font-semibold text-xl mt-3 max-w-xl mx-auto subtitle">
+            We try not to have favorites but we just can't help it!
+        </p>
+    
+        <!-- Wrapper to center carousel -->
+        <div class="flex justify-center mt-12">
+            <div class="relative carousel-container w-full max-w-7xl">
+                <div id="carousel" class="carousel w-full h-full relative">
+                    <!-- Cards with anchor tags -->
+                    <a href="menusouth.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0114.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">South Indian</h2>
+                            <p class="text-sm text-white accent-text">
+                                A Taste of Tradition
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="menu_soups.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0117.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Soups and Snacks</h2>
+                            <p class="text-sm text-white accent-text">
+                                Warm, comforting, and perfect for any time of the day.
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="veg.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/correen-BVYHxixlw_c-unsplash.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Vegetable Curries</h2>
+                            <p class="text-sm text-white accent-text">
+                                A Symphony of Flavors
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="sea_food.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="./images/pexels-valeriya-28701091.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Sea Food</h2>
+                            <p class="text-sm text-white accent-text">
+                                Fresh and Flavorful Sea Food Delight.
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="egg_dishes.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="./images/roman-shalkevic-UDRZtw_F_Nc-unsplash.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Egg Curries</h2>
+                            <p class="text-sm text-white accent-text">
+                                Rich, flavorful, and packed with protein, our egg curries are a must-try!
+                            </p>
+                        </div>
+                    </a>
+                    
+                    <a href="chicken_menu.html" class="carousel-card w-64 h-80 bg-lucha-pink rounded-2xl shadow-xl overflow-hidden glow-card">
+                        <img src="images/IMG-20250425-WA0119.jpg" class="w-full h-48 object-cover" />
+                        <div class="p-4 text-center">
+                            <h2 class="font-bold text-lg text-white">Chicken Delights</h2>
+                            <p class="text-sm text-white accent-text">
+                                Tender, juicy, and bursting with flavor, our chicken dishes are a must-try.
+                            </p>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Navigation buttons -->
-                <div class="nav-button prev-button bg-red-600 text-white">&lt;</div>
-                <div class="nav-button next-button bg-red-600 text-white">&gt;</div>
+                <!-- Arrow Buttons -->
+                <button onclick="rotateCarousel(-1)" 
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white text-2xl rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800">
+                    ←
+                </button>
+                
+                <button onclick="rotateCarousel(1)" 
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white text-2xl rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800">
+                    →
+                </button>
             </div>
-            <div class="text-center mt-8">
-                <a href="menu.html" class="bg-red-600 text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-red-700 transition-colors nav-links">View Full Menu</a>
-            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="menu.html" class="bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors nav-links">View Full Menu</a>
         </div>
     </section>
 
@@ -498,7 +359,54 @@
             </div>
         </div>
     </footer>
+    <div x-data="{ open: false }" class="fixed bottom-6 right-6 z-50 text-sm">
+        <!-- WhatsApp Options -->
+        <div x-show="open" x-transition class="mb-3 space-y-2">
+          <!-- Madurai -->
+          <a href="https://wa.me/919876543210" target="_blank"
+             class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <div>
+              <div class="font-bold">Madurai</div>
+              <div class="text-xs">+91 98765 43210</div>
+            </div>
+          </a>
+          <!-- Salem -->
+          <a href="https://wa.me/918765432109" target="_blank"
+             class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <div>
+              <div class="font-bold">Salem</div>
+              <div class="text-xs">+91 87654 32109</div>
+            </div>
+          </a>
+          <!-- Bangalore -->
+          <a href="https://wa.me/917654321098" target="_blank"
+             class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <div>
+              <div class="font-bold">Bangalore</div>
+              <div class="text-xs">+91 76543 21098</div>
+            </div>
+          </a>
+        </div>
+      
+        <!-- Main Floating Button -->
+        <button @click="open = !open"
+                class="bg-green-600 text-white text-3xl p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300">
+          <i class="fab fa-whatsapp"></i>
+        </button>
+      </div>
+      
+      <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
+      
+    
+    
+    <!-- Include FontAwesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <!-- Include FontAwesome -->
     <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
     

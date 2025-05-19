@@ -70,57 +70,66 @@ rel="stylesheet">
   font-weight: 400;
   font-style: normal;
 } 
-    
+         /* Hide scrollbar for all browsers */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.spike-divider {
+    position: relative;
+    background-color: #dc2626; /* Tailwind's red-600 */
+    z-index: 50;
+}
+
+/* Spike design - triangle spikes at bottom */
+.spike-divider::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(45deg, transparent 33.333%, white 50%, white 50%, transparent 50%),
+                      linear-gradient(-45deg, transparent 33.333%, white 50%, white 50%, transparent 50%);
+    background-size: 20px 20px;
+    background-position: 0 0;
+}
    
   </style>
 </head>
 <body class="bg-gray-800 bg-no-repeat min-h-screen" style="background-image: url('images/rice.jpg'); background-size: cover; background-position: center;">
-  <header class="bg-red-600 sticky top-0 z-50 shadow-md">
+  <header class="spike-divider sticky top-0 z-50 shadow-md">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <div class="logo">
-            <img src="images\15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo"
-class="h-14 md:h-16">
+            <img src="images/15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo" class="h-14 md:h-16">
         </div>
         <nav class="flex items-center">
-            <ul class="hidden md:flex mr-6">
-                <li><a href="index.html" class="text-white
-font-semibold text-sm mx-4 hover:text-yellow-300
-transition-colors">HOME</a></li>
-                <li><a href="about.html" class="text-white
-font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
-ABOUT</a></li>
-                <li><a href="menu.html" class="text-white
-font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
-MENU</a></li>
-                <li><a href="contact.html" class="text-white
-font-semibold text-sm mx-4 hover:text-yellow-300
-transition-colors">CONTACT US</a></li>
+            <ul class="hidden md:flex mr-6 nav-links">
+                <li><a href="index.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">HOME</a></li>
+                <li><a href="about.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">ABOUT</a></li>
+                <li><a href="menu.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">MENU</a></li>
+                <li><a href="contact.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">CONTACT US</a></li>
             </ul>
-            <button class="md:hidden ml-4 flex flex-col
-cursor-pointer" id="mobile-menu-btn">
+            <button class="md:hidden ml-4 flex flex-col cursor-pointer" id="mobile-menu-btn">
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
             </button>
         </nav>
     </div>
-    <!-- Mobile Menu (Hidden by default) -->
-    <div class="md:hidden hidden bg-red-600 w-full absolute top-full
-left-0 p-4 shadow-lg" id="mobile-menu">
-      <ul class="flex flex-col space-y-3">
-        <li><a href="index.html" class="text-white font-semibold
-text-sm block py-2 hover:text-lucha-pink
-transition-colors">HOME</a></li>
-        <li><a href="about.html" class="text-white font-semibold
-text-sm block py-2 hover:text-lucha-pink
-transition-colors">ABOUT</a></li>
-        <li><a href="menu.html" class="text-white font-semibold
-text-sm block py-2 hover:text-lucha-pink
-transition-colors">MENU</a></li>
-        <li><a href="contact.html" class="text-white font-semibold
-text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT
-US</a></li>
-    </ul>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden w-full absolute top-full left-0 p-4 shadow-lg nav-links" id="mobile-menu">
+        <ul class="flex flex-col space-y-3">
+            <li><a href="index.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">HOME</a></li>
+            <li><a href="about.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">ABOUT</a></li>
+            <li><a href="menu.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">MENU</a></li>
+            <li><a href="contact.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT US</a></li>
+        </ul>
     </div>
 </header>
   
@@ -391,7 +400,54 @@ flex items-center justify-center hover:bg-gray-100 transition-colors">
 
     </div>
 </footer>
+<div x-data="{ open: false }" class="fixed bottom-6 right-6 z-50 text-sm">
+  <!-- WhatsApp Options -->
+  <div x-show="open" x-transition class="mb-3 space-y-2">
+    <!-- Madurai -->
+    <a href="https://wa.me/919876543210" target="_blank"
+       class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+      <i class="fab fa-whatsapp text-lg"></i>
+      <div>
+        <div class="font-bold">Madurai</div>
+        <div class="text-xs">+91 98765 43210</div>
+      </div>
+    </a>
+    <!-- Salem -->
+    <a href="https://wa.me/918765432109" target="_blank"
+       class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+      <i class="fab fa-whatsapp text-lg"></i>
+      <div>
+        <div class="font-bold">Salem</div>
+        <div class="text-xs">+91 87654 32109</div>
+      </div>
+    </a>
+    <!-- Bangalore -->
+    <a href="https://wa.me/917654321098" target="_blank"
+       class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 transition">
+      <i class="fab fa-whatsapp text-lg"></i>
+      <div>
+        <div class="font-bold">Bangalore</div>
+        <div class="text-xs">+91 76543 21098</div>
+      </div>
+    </a>
+  </div>
 
+  <!-- Main Floating Button -->
+  <button @click="open = !open"
+          class="bg-green-600 text-white text-3xl p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Tagesschrift&display=swap" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+
+<!-- Include FontAwesome -->
+<script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <!-- Include AOS script only once, at the end -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
