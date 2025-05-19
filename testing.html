@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucha Faves Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card {
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-container {
+      perspective: 1000px;
+      overflow: hidden;
+    }
+    
+    .card-container {
+      transform-style: preserve-3d;
+      position: relative;
+      height: 280px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card {
+      position: absolute;
+      width: 170px;
+      height: 230px;
+      transition: all 0.5s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      transform-origin: center center;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .card-img {
+      height: 160px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    /* Hide all cards by default */
+    .card { 
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    /* Only show 5 cards at a time with specific transforms */
+    .card.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Left cards */
+    .card.position-0 { 
+      transform: translateX(-340px) translateZ(-60px) rotateY(25deg) scale(0.85); 
+      z-index: 1;
+    }
+    .card.position-1 { 
+      transform: translateX(-170px) translateZ(-30px) rotateY(15deg) scale(0.9); 
+      z-index: 2;
+    }
+    
+    /* Center card - bulging out */
+    .card.position-2 { 
+      transform: translateX(0) translateZ(60px) rotateY(0) scale(1.1); 
+      z-index: 5;
+    }
+    
+    /* Right cards */
+    .card.position-3 { 
+      transform: translateX(170px) translateZ(-30px) rotateY(-15deg) scale(0.9); 
+      z-index: 2;
+    }
+    .card.position-4 { 
+      transform: translateX(340px) translateZ(-60px) rotateY(-25deg) scale(0.85); 
+      z-index: 1;
+    }
+    
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      backdrop-filter: blur(3px);
+      z-index: 100;
+      cursor: pointer;
+    }
+    
+    .prev-button {
+      left: 20px;
+    }
+    
+    .next-button {
+      right: 20px;
+    }
+  </style>
+</head>
+<body class="bg-pink-400 min-h-screen flex flex-col items-center justify-center py-6">
+  <!-- Header -->
+  <div class="text-center mb-6">
+    <h1 class="text-3xl font-bold text-white">Lucha Faves</h1>
+    <p class="text-white text-sm">We try not to have favorites but we just can't help it!</p>
+  </div>
+  
+  <!-- Carousel -->
+  <div class="carousel-container w-full max-w-5xl relative">
+    <div class="card-container mx-auto">
+      <!-- Food cards -->
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Adobada Cali" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Adobada Cali</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$9.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Queso Taco" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Queso Taco</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$8.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Surfin' California" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Surfin' California</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$10.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Mini Taco" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Mini Taco</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$7.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Birria Cali" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Birria Cali</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$11.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Sopes Quesadilla" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Sopes Quesadilla</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$9.49</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Poblano Taco" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Poblano Taco</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$8.49</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Adobada Cali" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Adobada Cali</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$9.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Queso Taco" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Queso Taco</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$8.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Surfin' California" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Surfin' California</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$10.99</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card">
+        <img src="/api/placeholder/400/320" alt="Mini Taco" class="card-img">
+        <div class="p-2">
+          <h3 class="text-xs font-semibold">Mini Taco</h3>
+          <div class="flex items-center space-x-1">
+            <span class="text-xs text-gray-500">Order</span>
+            <span class="text-xs px-1">•</span>
+            <span class="text-xs text-gray-500">$7.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation buttons -->
+    <div class="nav-button prev-button">&lt;</div>
+    <div class="nav-button next-button">&gt;</div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+      const prevButton = document.querySelector('.prev-button');
+      const nextButton = document.querySelector('.next-button');
+      let currentIndex = 2; // Start with the third card as active (index 2)
+      
+      // Function to update the carousel position
+      const updateCarousel = () => {
+        cards.forEach((card, index) => {
+          // Remove all position classes and visibility
+          card.classList.remove('visible', 'position-0', 'position-1', 'position-2', 'position-3', 'position-4');
+          
+          // Calculate the relative position (from -2 to +2 for the 5 visible cards)
+          const position = (index - currentIndex + cards.length) % cards.length;
+          
+          // Only show 5 cards (positions -2 to +2 relative to current)
+          if (position >= 0 && position <= 4) {
+            card.classList.add('visible');
+            card.classList.add(`position-${position}`);
+          } else if (position >= cards.length - 2 && position <= cards.length - 1) {
+            // Handle wrapping for first few cards
+            const wrappedPosition = position - cards.length;
+            if (wrappedPosition >= -2 && wrappedPosition <= -1) {
+              card.classList.add('visible');
+              card.classList.add(`position-${wrappedPosition + 5}`);
+            }
+          }
+        });
+      };
+      
+      // Initialize the carousel
+      updateCarousel();
+      
+      // Event listeners for navigation buttons
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCarousel();
+      });
+      
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+      });
+      
+      // Auto-rotate carousel every 3 seconds
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
