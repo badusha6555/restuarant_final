@@ -108,109 +108,164 @@ rel="stylesheet">
 
 
   <!-- Outlets Section -->
- <section class="py-16 container mx-auto px-4 relative"
-    style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center;">
+  <section class="py-16 container mx-auto px-4 relative"
+style="background-image: url('food.jpg'); background-size: cover;
+background-position: center;">
     <div class="relative py-16 bg-cover bg-center">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 container mx-auto px-4 text-center text-white">
+        <div class="absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-4 text-center
+text-white">
           <h1 class="text-5xl font-bold mb-4">Visit Our Locations</h1>
-          <p class="text-xl max-w-3xl mx-auto">Authentic Indian flavors available at four convenient locations across Thailand</p>
+          <p class="text-xl max-w-3xl mx-auto">Authentic Indian
+flavors available at four convenient locations across Thailand</p>
         </div>
-    </div>
-    
+      </div>
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-white">Our Outlets</h2>
-      <p class="text-white mt-2 max-w-2xl mx-auto">Experience authentic North & South Indian cuisine crafted with passion and tradition.</p>
+      <p class="text-white mt-2 max-w-2xl mx-auto">Experience
+authentic North & South Indian cuisine crafted with passion and tradition.</p>
     </div>
 
-    <!-- 2x2 Grid Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      
-      <!-- First Row - Left: Pattaya Location -->
-      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Pattaya Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="map-container">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Madras Darbar Pattaya Location" class="w-full h-48 object-cover">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
         </div>
         <div class="p-6">
           <div class="flex items-center mb-4">
-            <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
             </div>
             <h3 class="text-xl font-bold text-gray-800">Pattaya</h3>
           </div>
+          <p class="text-gray-600 mb-4">Located in the heart of
+Pattaya's beach strip, our vibrant restaurant offers an unforgettable
+dining experience with ocean views.</p>
           <div class="mb-4">
-            <p class="font-medium text-gray-700 mb-1"><i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
             <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <a href="https://wa.me/66990984666" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
               <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+            </a>
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
             </a>
           </div>
         </div>
       </div>
       
-      <!-- First Row - Right: Bangkok Location -->
-      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+      <!-- Bangkok Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="map-container">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Madras Darbar Bangkok Location" class="w-full h-48 object-cover">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
         </div>
         <div class="p-6">
           <div class="flex items-center mb-4">
-            <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-             
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
             </div>
             <h3 class="text-xl font-bold text-gray-800">Bangkok</h3>
           </div>
+          <p class="text-gray-600 mb-4">Our Bangkok location offers an authentic Indian dining experience in the bustling heart of Thailand's capital city.</p>
           <div class="mb-4">
-            <p class="font-medium text-gray-700 mb-1"><i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
             <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <a href="https://wa.me/66990984666" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
               <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
             </a>
-          
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
           </div>
         </div>
       </div>
       
-      <!-- Second Row - Left: Phuket Location -->
-      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+      <!-- Phuket Location -->
+      <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="map-container">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Madras Darbar Phuket Location" class="w-full h-48 object-cover">
+          <!-- Map image instead of iframe -->
+          <img src="food.jpg" alt="Madras Darbar Location Map"
+class="w-full h-auto object-cover">
         </div>
         <div class="p-6">
           <div class="flex items-center mb-4">
-            <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-
+            <div class="h-10 w-10 rounded-full bg-red-600 flex
+items-center justify-center mr-3">
+              <a
+href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"><i
+class="fas fa-map-marker-alt text-white"></i></a>
             </div>
             <h3 class="text-xl font-bold text-gray-800">Phuket</h3>
           </div>
+          <p class="text-gray-600 mb-4">Our Phuket branch brings the rich flavors of Indian cuisine to Thailand's largest island paradise.</p>
           <div class="mb-4">
-            <p class="font-medium text-gray-700 mb-1"><i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
+            <p class="font-medium text-gray-700 mb-1"><i class="far
+fa-clock text-red-600 mr-2"></i>Opening Hours:</p>
             <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <a href="https://wa.me/66990984666" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+            <a href="https://wa.me/66990984666" target="_blank"
+class="block w-full bg-red-600 hover:bg-red-700 text-white
+font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
               <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
             </a>
-           
+            <a href="https://www.google.com/maps/place/Madras+Darbar+Indian+Restaurant/@12.933602,100.884766,12z/data=!4m6!3m5!1s0x3102960601b9f05f:0x45262db0c339df7!8m2!3d12.933602!4d100.8847664!16s%2Fg%2F119wqxh5h?coh=245187&entry=tts&g_ep=EgoyMDI1MDQxNi4xIPu8ASoJLDEwMjExNDUzSAFQAw%3D%3D"
+target="_blank" class="block w-full bg-gray-800 hover:bg-gray-900
+text-white font-semibold py-3 px-4 rounded-lg transition duration-300
+text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
           </div>
         </div>
       </div>
       
-      <!-- Second Row - Right: Sri Lanka Location -->
+      <!-- NEW: Sri Lanka Location -->
       <div class="location-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-        <div class="map-container">
-          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sri Lanka Location" class="w-full h-48 object-cover">
+        <div class="relative">
+          <div class="map-container">
+            <img src="food.jpg" alt="Sri Lanka Location" class="w-full h-auto object-cover">
+          </div>
         </div>
         <div class="p-6">
           <div class="flex items-center mb-4">
             <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-             
+              <a href="https://goo.gl/maps/YourChiangMaiLink" target="_blank">
+                <i class="fas fa-map-marker-alt text-white"></i>
+              </a>
             </div>
             <h3 class="text-xl font-bold text-gray-800">Sri Lanka</h3>
           </div>
+          <p class="text-gray-600 mb-4">Our newest location in Sri Lanka's Old City brings authentic Indian flavors to northern Thailand's cultural center.</p>
           <div class="mb-4">
             <p class="font-medium text-gray-700 mb-1">
               <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
@@ -218,10 +273,14 @@ rel="stylesheet">
             <p class="text-gray-600">8:00 AM to 11:00 PM (Daily)</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <a href="https://wa.me/66912345678" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+            <a href="https://wa.me/66912345678" target="_blank" 
+              class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
               <i class="fab fa-whatsapp mr-2"></i> +66 912 345 678
             </a>
-          
+            <a href="https://goo.gl/maps/YourChiangMaiLink" target="_blank" 
+              class="block w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+              <i class="fas fa-directions mr-2"></i> Get Directions
+            </a>
           </div>
         </div>
       </div>
