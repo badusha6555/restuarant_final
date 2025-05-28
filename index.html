@@ -239,6 +239,38 @@
     background-color: #dc2626; /* Tailwind's red-600 */
     z-index: 50;
 }
+  .brand-name {
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        /* Ensure no margin/padding issues */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Additional styling for better visual appeal */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+        
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height for dramatic effect */
+            min-height: 400px; /* Minimum height fallback */
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-container {
+                height: 70vh;
+            }
+        }
 
 /* Spike design - triangle spikes at bottom */
 
@@ -280,25 +312,32 @@
 </header>
 
     <!-- Hero Section -->
-<section class="relative">
-  <div class="w-full h-[40vh] md:h-[60vh] relative overflow-hidden">
-    <!-- Full container-filling image -->
-    <img 
-      src="tacos-hero.jpg" 
-      alt="Delicious food on a golden background" 
-      class="absolute top-0 left-0 w-full h-full object-cover z-0"
-    >
-
-    <!-- Overlay content -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-      <div class="bg-black bg-opacity-60 px-6 py-8 md:px-16 md:py-12 rounded-lg border border-white backdrop-blur-sm">
-        <h1 class="brand-name text-3xl md:text-5xl text-white font-bold tracking-wide">
-          Welcome to Madras Darbar
-        </h1>
-      </div>
-    </div>
-  </div>
-</section>
+ <section class="hero-container">
+        <!-- Background Image -->
+        <img 
+            src="tacos-hero.jpg"
+            class="absolute inset-0 w-full h-full object-cover z-0"
+        >
+        
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+            <div class="hero-overlay px-8 py-10 md:px-16 md:py-16 rounded-xl border border-white/20 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <h1 class="brand-name text-4xl md:text-6xl lg:text-7xl text-white font-bold tracking-wide mb-4">
+                    Welcome to Madras Darbar
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl font-light tracking-wide max-w-2xl">
+                    Experience the authentic flavors of South India
+                </p>
+            </div>
+        </div>
+        
+        <!-- Optional: Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
 
 
     <section
