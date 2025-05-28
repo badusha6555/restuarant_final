@@ -282,22 +282,24 @@
     <!-- Hero Section -->
 <section class="relative">
   <div class="w-full h-[40vh] md:h-[60vh] relative overflow-hidden">
+    <!-- Full container-filling image -->
     <img 
       src="tacos-hero.jpg" 
       alt="Delicious food on a golden background" 
-      class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 hover:scale-105" 
-      id="hero-img"
+      class="absolute top-0 left-0 w-full h-full object-cover z-0"
     >
-    
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-      <div class="bg-black bg-opacity-60 px-6 py-8 md:px-16 md:py-12 rounded-lg border-2 border-white transform transition-all duration-700 hover:scale-105">
-        <h1 class="brand-name text-3xl md:text-5xl text-white mb-2 tracking-wider">
+
+    <!-- Overlay content -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+      <div class="bg-black bg-opacity-60 px-6 py-8 md:px-16 md:py-12 rounded-lg border border-white backdrop-blur-sm">
+        <h1 class="brand-name text-3xl md:text-5xl text-white font-bold tracking-wide">
           Welcome to Madras Darbar
         </h1>
       </div>
     </div>
   </div>
 </section>
+
 
     <section
         class="relative"
