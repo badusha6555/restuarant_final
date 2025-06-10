@@ -455,151 +455,123 @@
     </section>
 
     <!-- Footer -->
-   <section class="py-16 container mx-auto px-4 relative"
-      style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center;">
-    
-    <!-- Hero Header -->
-    <div class="relative py-16 bg-cover bg-center mb-16">
-      <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
-      <div class="relative z-10 container mx-auto px-4 text-center text-white">
-        <h1 class="text-5xl font-bold mb-4">Visit Our Locations</h1>
-        <p class="text-xl opacity-90">Experience authentic Indian cuisine at our restaurants worldwide</p>
-      </div>
-    </div>
+  <section class="py-16 px-4 bg-cover bg-center" 
+  style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
 
-    <!-- 2x2 Grid Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      
-      <!-- Pattaya Location -->
-  <div class="relative rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group w-[500px] h-[450px]">
-  <!-- Image that expands on hover -->
-  <img src="pattaya.jpg" 
-       alt="Madras Darbar Pattaya Location" 
-       class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
-
-  <!-- Content block with white background -->
-  <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-8 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
-    <div class="flex items-center mb-6">
-      <div class="h-12 w-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
-        <i class="fas fa-map-marker-alt text-white text-base"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-gray-800">Pattaya</h3>
-    </div>
-    <div class="mb-6">
-      <p class="font-medium text-gray-700 mb-2">
-        <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
-      </p>
-      <p class="text-gray-600 text-lg">7:00 AM to 3:00 AM (Daily)</p>
-    </div>
-    <div class="flex flex-col space-y-4">
-      <a href="https://wa.me/66990984666" 
-         target="_blank" 
-         class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-6 rounded-lg transition duration-300 text-center text-lg">
-        <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
-      </a>
+  <!-- Hero Header -->
+  <div class="relative bg-cover bg-center mb-16">
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+    <div class="relative z-10 text-center text-white py-12 px-4">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Visit Our Locations</h1>
+      <p class="text-lg sm:text-xl opacity-90">Experience authentic Indian cuisine at our restaurants worldwide</p>
     </div>
   </div>
-</div>
 
+  <!-- Grid Layout -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-7xl mx-auto">
 
-      
-      <!-- Bangkok Location -->
-      <div class="location-card relative bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group w-[500px] h-[450px]">
-  <!-- Image container -->
-  <img src="bangkok1.jpg" 
-       alt="Madras Darbar Bangkok Location" 
-       class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
-
-  <!-- Content block -->
-  <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
-    <div class="flex items-center mb-4">
-      <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-        <i class="fas fa-map-marker-alt text-white text-sm"></i>
+    <!-- Single Location Card (Reusable) -->
+    <!-- Location Card Component -->
+    <!-- Repeat this for each location -->
+    <!-- Pattaya -->
+    <div class="relative rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 group w-full h-[450px]">
+      <img src="pattaya.jpg" alt="Madras Darbar Pattaya" 
+           class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
+      <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 sm:p-8 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+            <i class="fas fa-map-marker-alt text-white text-base"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Pattaya</h3>
+        </div>
+        <div class="mb-4">
+          <p class="font-medium text-gray-700 mb-2">
+            <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
+          </p>
+          <p class="text-gray-600 text-base sm:text-lg">7:00 AM to 3:00 AM (Daily)</p>
+        </div>
+        <a href="https://wa.me/66990984666" target="_blank"
+           class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+          <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+        </a>
       </div>
-      <h3 class="text-xl font-bold text-gray-800">Bangkok</h3>
     </div>
-    <div class="mb-4">
-      <p class="font-medium text-gray-700 mb-1">
-        <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
-      </p>
-      <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
-    </div>
-    <div class="flex flex-col space-y-3">
-      <a href="https://wa.me/66990984666" 
-         target="_blank" 
-         class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
-        <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
-      </a>
-    </div>
-  </div>
-</div>
 
-      
-      <!-- Phuket Location -->
-      <div class="location-card relative bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group w-[500px] h-[450px]">
-  <!-- Image -->
-  <img src="phuket2.jpg" 
-       alt="Madras Darbar Phuket Location" 
-       class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
-
-  <!-- Content -->
-  <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
-    <div class="flex items-center mb-4">
-      <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-        <i class="fas fa-map-marker-alt text-white text-sm"></i>
+    <!-- Bangkok -->
+    <div class="relative rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 group w-full h-[450px]">
+      <img src="bangkok1.jpg" alt="Madras Darbar Bangkok" 
+           class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
+      <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 sm:p-8 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+            <i class="fas fa-map-marker-alt text-white text-base"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Bangkok</h3>
+        </div>
+        <div class="mb-4">
+          <p class="font-medium text-gray-700 mb-2">
+            <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
+          </p>
+          <p class="text-gray-600 text-base sm:text-lg">7:00 AM to 3:00 AM (Daily)</p>
+        </div>
+        <a href="https://wa.me/66990984666" target="_blank"
+           class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+          <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+        </a>
       </div>
-      <h3 class="text-xl font-bold text-gray-800">Phuket</h3>
     </div>
-    <div class="mb-4">
-      <p class="font-medium text-gray-700 mb-1">
-        <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
-      </p>
-      <p class="text-gray-600">7:00 AM to 3:00 AM (Daily)</p>
-    </div>
-    <div class="flex flex-col space-y-3">
-      <a href="https://wa.me/66990984666" 
-         target="_blank" 
-         class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
-        <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
-      </a>
-    </div>
-  </div>
-</div>
 
-      
-      <!-- Sri Lanka Location -->
-      <div class="location-card relative bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 group w-[500px] h-[450px]">
-  <!-- Image -->
-  <img src="srilanka.jpg" 
-       alt="Madras Darbar Sri Lanka Location" 
-       class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
-
-  <!-- Content -->
-  <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
-    <div class="flex items-center mb-4">
-      <div class="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center mr-3">
-        <i class="fas fa-map-marker-alt text-white text-sm"></i>
+    <!-- Phuket -->
+    <div class="relative rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 group w-full h-[450px]">
+      <img src="phuket2.jpg" alt="Madras Darbar Phuket" 
+           class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
+      <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 sm:p-8 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+            <i class="fas fa-map-marker-alt text-white text-base"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Phuket</h3>
+        </div>
+        <div class="mb-4">
+          <p class="font-medium text-gray-700 mb-2">
+            <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
+          </p>
+          <p class="text-gray-600 text-base sm:text-lg">7:00 AM to 3:00 AM (Daily)</p>
+        </div>
+        <a href="https://wa.me/66990984666" target="_blank"
+           class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+          <i class="fab fa-whatsapp mr-2"></i> +66 990 984 666
+        </a>
       </div>
-      <h3 class="text-xl font-bold text-gray-800">Sri Lanka</h3>
     </div>
-    <div class="mb-4">
-      <p class="font-medium text-gray-700 mb-1">
-        <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
-      </p>
-      <p class="text-gray-600">8:00 AM to 11:00 PM (Daily)</p>
-    </div>
-    <div class="flex flex-col space-y-3">
-      <a href="https://wa.me/66912345678" 
-         target="_blank" 
-         class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
-        <i class="fab fa-whatsapp mr-2"></i> +66 912 345 678
-      </a>
-    </div>
-  </div>
-</div>
 
+    <!-- Sri Lanka -->
+    <div class="relative rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 group w-full h-[450px]">
+      <img src="srilanka.jpg" alt="Madras Darbar Sri Lanka" 
+           class="absolute top-0 left-0 w-full h-1/2 object-cover transition-all duration-500 group-hover:h-full z-0">
+      <div class="absolute bottom-0 left-0 w-full bg-white z-10 p-6 sm:p-8 transition-opacity duration-500 group-hover:opacity-0 group-hover:pointer-events-none">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+            <i class="fas fa-map-marker-alt text-white text-base"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Sri Lanka</h3>
+        </div>
+        <div class="mb-4">
+          <p class="font-medium text-gray-700 mb-2">
+            <i class="far fa-clock text-red-600 mr-2"></i>Opening Hours:
+          </p>
+          <p class="text-gray-600 text-base sm:text-lg">8:00 AM to 11:00 PM (Daily)</p>
+        </div>
+        <a href="https://wa.me/66912345678" target="_blank"
+           class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 text-center">
+          <i class="fab fa-whatsapp mr-2"></i> +66 912 345 678
+        </a>
+      </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
 <section 
   class="py-16 bg-cover bg-center bg-no-repeat" 
   style="background-image: url('bg3.jpg');">
