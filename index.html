@@ -248,17 +248,48 @@
     <!-- Header -->
     <header class="spike-divider sticky top-0 z-50 shadow-md">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        
+        <!-- Hidden H1 for SEO -->
+        <h1 class="sr-only">Madras Darbar - Authentic South Indian Restaurant</h1>
+        
+        <!-- Logo -->
         <div class="logo">
-            <img src="images/15-removebg-preview.png" alt="Lucha Libre Taco Shop Logo" class="h-14 md:h-16">
+            <img src="images/15-removebg-preview.png" 
+                 alt="Madras Darbar Restaurant Logo" 
+                 title="Madras Darbar Restaurant" 
+                 class="h-14 md:h-16">
         </div>
-        <nav class="flex items-center">
+        
+        <!-- Navigation -->
+        <nav class="flex items-center" aria-label="Main Navigation">
             <ul class="hidden md:flex mr-6 nav-links">
-                <li><a href="index.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">HOME</a></li>
-                <li><a href="about.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">ABOUT</a></li>
-                <li><a href="menu.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">MENU</a></li>
-                <li><a href="contact.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">CONTACT US</a></li>
+                <li>
+                    <a href="index.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a href="menu.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+                        MENU
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="text-white font-semibold text-sm mx-4 hover:text-yellow-300 transition-colors">
+                        CONTACT US
+                    </a>
+                </li>
             </ul>
-            <button class="md:hidden ml-4 flex flex-col cursor-pointer" id="mobile-menu-btn">
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden ml-4 flex flex-col cursor-pointer" 
+                    id="mobile-menu-btn" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu">
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
                 <span class="w-6 h-0.5 bg-white my-0.5 rounded"></span>
@@ -268,15 +299,31 @@
 
     <!-- Mobile Menu -->
     <div class="md:hidden hidden w-full absolute top-full left-0 p-4 shadow-lg nav-links bg-red-600" id="mobile-menu">
-    <ul class="flex flex-col space-y-3">
-        <li><a href="index.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">HOME</a></li>
-        <li><a href="about.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">ABOUT</a></li>
-        <li><a href="menu.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">MENU</a></li>
-        <li><a href="contact.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">CONTACT US</a></li>
-    </ul>
-</div>
-
+        <ul class="flex flex-col space-y-3">
+            <li>
+                <a href="index.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">
+                    HOME
+                </a>
+            </li>
+            <li>
+                <a href="about.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">
+                    ABOUT
+                </a>
+            </li>
+            <li>
+                <a href="menu.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">
+                    MENU
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="text-white font-semibold text-sm block py-2 hover:text-lucha-pink transition-colors">
+                    CONTACT US
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>
+
 
     <!-- Hero Section -->
      <section class="relative h-screen">
